@@ -1,0 +1,12 @@
+
+services:
+  jupyter:
+    image: jupyter/base-notebook:latest   # change to scipy-notebook if you need more libs
+    container_name: jupyter_lab
+    ports:
+      - "8888:8888"
+    volumes:
+      - /home/pbertoni/opt/melodia/:/work   # relative path -> mounted dir
+    environment:
+      - JUPYTER_TOKEN=
+    restart: unless-stopped
